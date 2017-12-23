@@ -1,18 +1,67 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+    <ion-navbar color="dark">
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+        <ion-title>Nandan TV</ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content fullscreen>
+    <ion-footer style="background-color:black;">
+        <ion-segment [(ngModel)]="pet" color="dark">
+            <ion-segment-button value="kittens" style="color:azure">
+                LIVE
+            </ion-segment-button>
+            <ion-segment-button value="puppies" style="color:azure">
+                Contact
+            </ion-segment-button>
+        </ion-segment>
+    </ion-footer>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <div [ngSwitch]="pet">
+        <div *ngSwitchCase="'puppies'">
+            <h4>
+                Adress:
+            </h4>
+            <h5>
+                2986 Danforth Ave. Suite 202 Toronto, ON M4C 1M6
+            </h5>
+            <p>
+                <b>Phone: 416-686-2890, 647-966-2854</b>
+            </p>
+            <BR>
+            <br>
+            <br>
+            <hr>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.960206521092!2d-79.29390678450106!3d43.6905906791201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cc20f51f3b63%3A0xaf1dabcf77a090d3!2s2986+Danforth+Ave+%23202%2C+East+York%2C+ON+M4C+1M6%2C+Canada!5e0!3m2!1sen!2sbd!4v1513883143189"
+                width="430" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        </div>
+
+        <div *ngSwitchCase="'kittens'">
+
+
+            <ion-card color="dark" (click)="statVideo()">
+                <video width="500" height="440" poster="assets/imgs/nandan.png" controls color="dark">
+  
+ 
+</video>
+
+            </ion-card>
+            <h6>
+                Nandan, a community-based infotainment Canadian Bengali Television, is a sister concern of Darkroom Media House Ltd. </h6>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!--<button ion-button full (click)="statVideo()">Start Video</button>-->
+
 </ion-content>
