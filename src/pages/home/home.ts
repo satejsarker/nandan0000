@@ -21,7 +21,7 @@ pet:any;
 let option:StreamingVideoOptions={
   successCallback:()=>{console.log()},
   errorCallback:()=>{console.log()},
-  orientation:'landscape'
+  orientation:''
 }
     this.streaming.playVideo('https://wowzaprod148-i.akamaihd.net/hls/live/584453/e3db5fa6/playlist.m3u8',option);
 
